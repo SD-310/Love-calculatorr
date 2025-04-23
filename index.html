@@ -9,17 +9,19 @@
 </head>
 <link rel="stylesheet" href="style.css">
 <body>
-    <h1>LOVE lllllCALCULATOR.</h1>
+    <h1>LOVE CALCULATOR.</h1>
     <em><h2>Check how compatible you are with your lover!</h2></em>
-    <form action="result.php" method="post">
-       <div> <label for="name1" class = "label1">Your name:</label><br>
+    <form>
+       <div class = "sr"> <label for="name1" class = "label1">Your name:</label><br>
         <input type="text" id="name1" name="name1" required placeholder="type" class="input1"></div><br><br>
-        <div> <label for="name2" class = "label2" >Your lover's name:</label><br>
-            <input type="text" id="name2"  class="input1" required placeholder="type"><br><br></div>
+        <div class="sr"> <label for="name2" class = "label2" >Your lover's name:</label><br>
+        <input type="text" id="name2"  class="input1" required placeholder="type"><br><br></div>
         <button class="btn"> Calculate </button>
-        
+        <p id="result" style="margin-top: 20px; font-weight: bold;"></p>
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="./index.js"></script>
-
+      <em>  <footer> refresh the page after playing to restart. thanks for playing!</footer></em>
+      <p><a href="https://www.facebook.com/samuel.donatus.3110/">CONTACT ME</a></p>
 </body>
 </html>

@@ -8,21 +8,32 @@ $(document).ready(function () {
                 });
         }
     }
-    flashH1(3); 
 
-    var yourName = prompt("Enter your name.")
-var loversName = prompt ("Enter your Lover's/Crushes name")
+    flashH1(2);
+    $("h2").hide().fadeIn(1000);
+    $("div").css({ position: "relative", left: "-100%" }).animate({ left: "0%" }, 1000);
+    $(".btn").hide().fadeIn(1000);
+
+    $(".btn").click(function (event) {
+        event.preventDefault();
+        $(this).fadeOut(600).fadeIn(5000);
 
 
-$(".btn").click(function () {
-    var loveScore = Math.random()
-var workings = loveScore*100
-var finishUp = Math.round(workings)
+        var loveScore = Math.random();
+        var finishUp = Math.round(loveScore * 100);
+        var loversName = $("#name2").val();
 
-if (finishUp > 70) {
-    alert ("The chances of you ending up with" + loversName + " is " + finishUp +  "%, high chance of ending up with them")
-}
-    else {
-alert("The chances of you ending up with " + loversName  + " is " + finishUp + "%, good luck in your love journey")
-}
-})
+        if (!loversName) {
+            $("#result").html(`<span style="color: red;">Please enter a name!</span>`);
+          
+
+            return;
+        }
+
+        if (finishUp > 70) {
+            $("#result").html(`💘 The chances of you ending up with <strong>${loversName}</strong> is <span style="color: hotpink;">${finishUp}%</span> — high chance of ending up with them!`);
+        } else {
+            $("#result").html(`😅 The chances of you ending up with <strong>${loversName}</strong> is <span style="color: gray;">${finishUp}%</span> — good luck in your love journey!`);
+        }
+    });
+});
